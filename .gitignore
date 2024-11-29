@@ -1,2 +1,8 @@
+# Generalized
 .DS_Store
-**/node_modules/
+
+
+# Specific
+typescript/**/.parcel-cache/
+typescript/**/node_modules/
+typescript/basic-course/secondapp/dist/
