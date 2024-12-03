@@ -7,12 +7,14 @@
   * randomly generate a company.
   * company will have a longitude and latitude
   * With the result showing these points on a map.
+    * marker popup will display the generate info
 
 * src folder will contain
   * index.ts
-    * Map.ts
-    * User.ts
-    * Company.ts
+  * CustomMap.ts
+  * User.ts
+  * Company.ts
+  * style.css
 
 [Faker-js](https://fakerjs.dev/api/) will be used to create random user data.
 
@@ -44,7 +46,9 @@ You can read about this in the official docs here:
 
 <https://developers.google.com/maps/documentation/javascript/using-typescript#Module_Import>
 
-#### maps script tag, style.css and initMap (as of Dec 2024)
+#### maps basic script tag items
+
+script tag, style.css and initMap (as of Dec 2024)
 
 ```html
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNLrJhOMz6idD05pzfn5lhA-TAw-mAZCU&loading=async&libraries=maps,markers&v=beta" defer></script>
@@ -83,3 +87,5 @@ body {
   padding: 0;
 }
 ```
+
+These are inital setup items, given the instructions available on google map api docs.
