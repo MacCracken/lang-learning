@@ -44,8 +44,42 @@ You can read about this in the official docs here:
 
 <https://developers.google.com/maps/documentation/javascript/using-typescript#Module_Import>
 
-#### current version of the script tag
+#### maps script tag, style.css and initMap (as of Dec 2024)
 
 ```html
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNLrJhOMz6idD05pzfn5lhA-TAw-mAZCU&loading=async&libraries=maps&v=beta" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNLrJhOMz6idD05pzfn5lhA-TAw-mAZCU&loading=async&libraries=maps,markers&v=beta" defer></script>
+```
+
+```ts
+let map: google.maps.Map;
+async function initMap(): Promise<void> {
+  const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
+  map = new Map(document.getElementById("map") as HTMLElement, {
+    zoom: 1,
+    center: { 
+      lat: 0, 
+      lng: 0
+    },
+  });
+}
+
+initMap();
+```
+
+needed basic css for map height
+
+```css
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 ```
