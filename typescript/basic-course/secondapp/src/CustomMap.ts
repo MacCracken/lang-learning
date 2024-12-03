@@ -9,6 +9,7 @@ interface Mappable {
   };
 }
 
+
 export class CustomMap{
   private googleMap: google.maps.Map;
 
@@ -24,12 +25,20 @@ export class CustomMap{
   }
 
   addMarker(mappable: Mappable): void {
-    new google.maps.marker.AdvancedMarkerElement({
+    const marker = new google.maps.marker.AdvancedMarkerElement({
       map: this.googleMap,
       position: { 
         lat: mappable.location.lat, 
         lng: mappable.location.lng
       }
     });
+
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: 'Hi there'
+      });
+
+      infoWindow.open(this.googleMap, marker)
+    })
   }
 }
