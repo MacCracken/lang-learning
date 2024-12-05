@@ -1,12 +1,7 @@
 //import React from 'react';
 import ReactDOM from 'react-dom/client';
-import UserSearch from './classes/UserSearch';
+import UserSearch from './refs/UserSearch';
 
-const users = [
-  {name: 'Sarah', age: 20},
-  {name: 'Alex', age: 20},
-  {name: 'Michael', age: 20}
-]
 // 2) Get a reference to the div with ID root
 const el = document.getElementById("root");
   
@@ -17,7 +12,7 @@ const root = ReactDOM.createRoot(el!);
 const App = () => {
   return (
     <div>
-      <UserSearch users={users}/>
+      <UserSearch />
     </div>
   );
 };
