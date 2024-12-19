@@ -44,3 +44,36 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+___
+
+## Project - NPM API Package Search
+
+A react app that searches npm packages(repositories)
+
+searching `registry.npmjs.org/-/v1/search?text=$REPOSITORY_NAME`
+
+### Redux Store
+
+Store style
+              ---> Data (LIST of repositories)
+Repositories -+--> Loading (BOOL if fetching data)
+              ---> Error (STRING, error message if occurred)
+
+Action Creators
+'searchRepositories(term)
+
+Actions
+'SearchRepositories'
+'SearchRepositoriesSuccess'
+'SearchRepositoriesError'
+
+Action Types
+'search_repositories'
+'search_repositories_success'
+'search_repositoties_error'
+
+Action Creator -> Actions -> Redux Store
+                    ^
+                Action Types
+
