@@ -5,4 +5,4 @@
 # Specific
 typescript/**/.parcel-cache/
 typescript/**/node_modules/
-typescript/basic-course/secondapp/dist/
+typescript/basic-course/**/dist/
