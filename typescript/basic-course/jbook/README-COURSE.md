@@ -28,3 +28,8 @@ A CLI to launch an interactive development environment for writing and documenti
 1) Webpack doesn't work in browser.
 
 Solution: ES Build (transpiles and bundles code) [website](https://esbuild.github.io)
+
+
+### Limitations
+
+1) Sandboxed iframe output window doesn't allow localstorage usage.
