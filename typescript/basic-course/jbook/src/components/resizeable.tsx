@@ -12,6 +12,8 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
       height={300}
       width={Infinity}
       resizeHandles={['s']}
+      maxConstraints={[Infinity, window.innerHeight * 0.9]}
+      minConstraints={[Infinity, 24]}
     >
       { children }
     </ResizableBox>
