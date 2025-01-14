@@ -1,8 +1,10 @@
+import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import * as esbuild from 'esbuild-wasm';
 import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { unpkgPathPlugin } from './plugin/unpkg-path-plugin';
 import { fetchPlugin } from './plugin/fetch-plugin';
+import CodeEditor from './components/code-editor';
 
 const el = document.getElementById("root");
 const root = ReactDOM.createRoot(el!);
@@ -68,13 +70,22 @@ const App = () => {
     </html>
   `;
 
-  return <div>
-    <textarea value={input} onChange={e => setInput(e.target.value)}></textarea>
+  return (
     <div>
-      <button onClick={onClick}>Submit</button>
+      <CodeEditor 
+        initialValue='const a = 1;'
+        onChange={(value) => setInput(value)}
+      />
+      <textarea 
+        value={input} 
+        onChange={e => setInput(e.target.value)}>
+      </textarea>
+      <div>
+        <button className='button button-format is-primary is-small' onClick={onClick}>Submit</button>
+      </div>
+      <iframe ref={iframe} sandbox='allow-scripts' title='preview' srcDoc={html} />
     </div>
-    <iframe ref={iframe} sandbox='allow-scripts' title='preview' srcDoc={html} />
-  </div>;
+  );
 };
 
 root.render(<App />);
