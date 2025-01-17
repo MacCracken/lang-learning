@@ -42,3 +42,13 @@ There are a few different ways to manage a multi-package project, jbook will be 
 * NPM Workspaces
 * Bolt
 * Luigi
+
+#### [Lerna](https://lerna.js.org/docs/introduction)
+
+##### Commands
+
+* initialize folder `lerna init`
+
+* add to all modules `lerna add react`
+* add a module to a package `lerna add module-1 package/prefix-*`
+* install module-1 into -2 `lerna add module-1 --scope=module-2`
