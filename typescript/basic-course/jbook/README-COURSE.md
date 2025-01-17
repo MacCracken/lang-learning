@@ -52,3 +52,7 @@ There are a few different ways to manage a multi-package project, jbook will be 
 * add to all modules `lerna add react`
 * add a module to a package `lerna add module-1 package/prefix-*`
 * install module-1 into -2 `lerna add module-1 --scope=module-2`
+
+##### npx typescript support
+
+`npx tsc --init`
