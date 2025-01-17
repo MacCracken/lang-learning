@@ -29,7 +29,16 @@ A CLI to launch an interactive development environment for writing and documenti
 
 Solution: ES Build (transpiles and bundles code) [website](https://esbuild.github.io)
 
-
 ### Limitations
 
 1) Sandboxed iframe output window doesn't allow localstorage usage.
+
+### Multi-package projects
+
+There are a few different ways to manage a multi-package project, jbook will be using Lerna.  The few options to do such a project.
+
+* Lerna
+* Yarn Workspaces
+* NPM Workspaces
+* Bolt
+* Luigi
