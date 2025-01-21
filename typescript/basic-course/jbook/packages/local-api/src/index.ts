@@ -13,6 +13,8 @@ export const serve = (
   const packagePath = require.resolve('local-client/build/index.html');
   const expressStatic = express.static(path.dirname(packagePath));
 
+  app.use(createCellsRouter(filename, dir));
+
   // create proxy
   const apiProxy = createProxyMiddleware({
     target: 'http://127.0.0.1:3000',
@@ -20,13 +22,11 @@ export const serve = (
     //logger: console,
   });
   
-  if (useProxy === true) {
+  if (useProxy) {
     app.use(apiProxy);
   } else {
     app.use(expressStatic);
   }
-
-  app.use(createCellsRouter(filename, dir));
   
   return new Promise<void>((resolve, reject) => {
     app.listen(port, () => {

@@ -28,6 +28,10 @@ const reducer = produce((
   action: Action
 ): CellsState | void => {
   switch (action.type) {
+    case ActionType.SAVE_CELLS_ERROR:
+      state.error = action.payload;
+
+      return state;
     case ActionType.FETCH_CELLS:
       state.loading = true;
       state.error = null;
@@ -45,9 +49,6 @@ const reducer = produce((
       state.loading = false;
       state.error = action.payload;
 
-      return state;
-    case ActionType.SAVE_CELL:
-      // to be done
       return state;
     case ActionType.UPDATE_CELL:
       const { id, content } = action.payload;
