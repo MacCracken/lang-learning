@@ -11,6 +11,7 @@ const CellList: React.FC = () => {
   );
 
   const { fetchCells } = useActions();
+  
   useEffect(() => {
     fetchCells();
   }, []);
