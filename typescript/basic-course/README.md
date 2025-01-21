@@ -15,3 +15,5 @@ Course Goals
   * Classes + Refresher on OOP
 * Design Patterns
   * Projects
+
+![alt text](./cert-react-ts.jpg)
