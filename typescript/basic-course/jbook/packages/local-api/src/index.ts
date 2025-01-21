@@ -1,6 +1,7 @@
 import express from 'express';
-import { createProxyMiddleware } from 'http-proxy-middleware';
 import path from 'path';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+import { createCellsRouter } from './routes/cell';
 
 export const serve = (
   port: number,
@@ -25,6 +26,8 @@ export const serve = (
     app.use(expressStatic);
   }
 
+  app.use(createCellsRouter(filename, dir));
+  
   return new Promise<void>((resolve, reject) => {
     app.listen(port, () => {
       console.log('Server is listening on port', port);
