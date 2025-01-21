@@ -16,4 +16,6 @@ Course Goals
 * Design Patterns
   * Projects
 
+## Completion Certificate
+
 ![alt text](./cert-react-ts.jpg)
